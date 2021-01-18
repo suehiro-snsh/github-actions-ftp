@@ -1,6 +1,11 @@
 # Github Actionsを用いたpush時の自動デプロイ
 
-Githubのmasterブランチにpushした際に自動デプロイが発火するようにする。
+## 0. 概要
+Githubのmasterブランチにpushした際に自動デプロイが発火するようにする  
+
+### 自動デプロイのメリット
+* 手動アップロードによる人為的ミスを減らせる
+* 本番環境・テスト環境でソースコードの一貫性を保つことができる
 
 ## 1.必要なファイル
 ```
@@ -47,7 +52,7 @@ jobs:
 * server, username, passwordはgithub管理画面から設定
 
 ### 2. server, username, passwordの設定
-ftpの接続情報である、server, username, passwordはセキュリティを考慮し、githubの管理画面から設定します。
+ftpの接続情報である、server, username, passwordはセキュリティを考慮し、githubの管理画面から設定する。
   1. Settingsを開く
   2. 左側のSecretsを開く
   3. New repository secretにserver, username, passwordをそれぞれ設定していく  
@@ -62,7 +67,7 @@ srcを開発フォルダ、distをビルド結果の出力先とし、distをgit
 ```
 
 ## 注意点、その他
-クライアントの本番サーバーで初めて行う際は、ダミーフォルダを作って一度テストをしましょう。
+クライアントの本番サーバーで初めて行う際は、ダミーフォルダを作って一度テストをすること。
 
-その他の設定などは以下を参照してください。
+その他の設定などは以下を参照。
 https://github.com/SamKirkland/FTP-Deploy-Action
