@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
+      - uses: actions/checkout@v2.3.2
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@master
