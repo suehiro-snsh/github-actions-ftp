@@ -19,3 +19,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # local-dir: ./dist/
           server-dir: /web/clients/z_suehiro/
+          exclude: README.md
+            - src/**
