@@ -1,7 +1,7 @@
 # Github Actionsを用いたpush時の自動デプロイ
 
 ## 0. 概要
-Githubのmasterブランチにpushした際に自動デプロイが発火するようにする  
+Githubのmasterブランチにpushした際に自動デプロイが発火するようにする
 
 ### 自動デプロイのメリット
 * 手動アップロードによる人為的ミスを減らせる
@@ -14,6 +14,8 @@ Githubのmasterブランチにpushした際に自動デプロイが発火する�
     master.yml
 .gitignore
 ```
+
+※`.gitignore`はあってもなくてもいいが、あるケースが多いと思うので、ある前提で解説します。
 
 ## 2.手順
 ### 1. master.ymlの設定
@@ -61,12 +63,12 @@ jobs:
 ftpの接続情報である、server, username, passwordはセキュリティを考慮し、githubの管理画面から設定する。
   1. Settingsを開く
   2. 左側のSecretsを開く
-  3. New repository secretにserver, username, passwordをそれぞれ設定していく  
+  3. New repository secretにserver, username, passwordをそれぞれ設定していく
     ※master.ymlの`${{ secrets.FTP_SERVER }}`の`FTP_SERVER`をName、情報をValueとする
 
 ## 注意点、その他
 * `.gitignore`に設定したものは当然デプロイされない。
-* `.git-ftp-include`,`.git-ftp-ignore`は以前は使えたようだが、2021年1月現在は使えない。  
+* `.git-ftp-include`,`.git-ftp-ignore`は以前は使えたようだが、2021年1月現在は使えない。
 そのため、distを`.gitignore`に含めないこと。
 * `ftp-deploy-sync-state.json`がデプロイ先のサーバーに作られるがそのままにしておく。
 * パスの`/`有無でデプロイ時にエラーがでたりするので気をつける。
