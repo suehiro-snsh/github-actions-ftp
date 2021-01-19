@@ -21,7 +21,7 @@ jobs:
           server-dir: /web/clients/z_suehiro/
           exclude: .git*
             - .git*/**
-            -  **/.git*/**
+            - **/.git*/**
             - node_modules/**
             - node_modules/**/*
             - README.md
